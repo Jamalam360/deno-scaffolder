@@ -1,15 +1,4 @@
-async function exists(path: string): Promise<boolean> {
-  try {
-    await Deno.stat(path);
-    return true;
-  } catch (e) {
-    if (e instanceof Deno.errors.NotFound) {
-      return false;
-    } else {
-      throw e;
-    }
-  }
-}
+import { exists } from "https://deno.land/std/fs/mod.ts";
 
 let vscodeSettings = true;
 
